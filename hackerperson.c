@@ -7,7 +7,7 @@ typedef struct {
 		char* buffer;
 		size_t buffer_length;
 		ssize_t input_length;
-} InputBuffer;
+} InputBuffer; 
 
 InputBuffer* new_input_buffer() {
 		InputBuffer* input_buffer = malloc(sizeof(InputBuffer));
