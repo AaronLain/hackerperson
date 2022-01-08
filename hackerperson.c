@@ -19,7 +19,7 @@ InputBuffer* new_input_buffer() {
 		return input_buffer;
 }
 
-void print_prompt() { printf("what do? > "); }
+void print_prompt() { printf(" > "); }
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
@@ -41,8 +41,8 @@ void close_input_buffer(InputBuffer* input_buffer) {
 		free(input_buffer);
 }
 
-void clear_screen() {
-    for (int i = 0; i<255; i++) {
+void clear_screen(int lines) {
+    for (int i = 0; i<lines; i++) {
         printf("\n");
     }
 }
@@ -62,11 +62,16 @@ void timer(int ms) {
 }
 
 void intro() {
-    printf("Time to wake up Neo . . .\n");
+    clear_screen(255);
     timer(1000);
-    clear_screen();
+    printf("Time to wake up Neo . . .\n");
+    timer(4300);
+    clear_screen(10);
     printf("Nah, just messing with you.\n");
-    timer(500);
+    timer(4000);
+    clear_screen(10);
+    printf("But seriously we could use some help.\n");
+    
 }
 
 int main(int argc, char* argv[]) {
@@ -78,7 +83,8 @@ int main(int argc, char* argv[]) {
 				read_input(input_buffer);
 
 				if (strcmp(input_buffer->buffer, ".exit") == 0) {
-						close_input_buffer(input_buffer);
+						printf("Thanks for playing!\n");
+            close_input_buffer(input_buffer);
 						exit(EXIT_SUCCESS);
 				} else {
 						printf("Can't do that '%s' .\n", input_buffer->buffer);
