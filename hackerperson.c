@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 typedef struct {
 		char* buffer;
@@ -46,10 +47,26 @@ void clear_screen() {
     }
 }
 
+void timer(int ms) {
+    if (ms <=0) {
+        fprintf(stderr, "can't do negative time, bruh");
+        return;
+    }
+    
+    int ms_before = clock() * 1000 / CLOCKS_PER_SEC;
+    int end = ms_before + ms;
+
+    do {
+        ms_before = clock() * 1000 / CLOCKS_PER_SEC;
+    } while (ms_before <= end);
+}
+
 void intro() {
-    printf("Time to wake up Neo . . .");
+    printf("Time to wake up Neo . . .\n");
+    timer(1000);
     clear_screen();
     printf("Nah, just messing with you.\n");
+    timer(500);
 }
 
 int main(int argc, char* argv[]) {
