@@ -40,10 +40,24 @@ void close_input_buffer(InputBuffer* input_buffer) {
 		free(input_buffer);
 }
 
+void clear_screen() {
+    for (int i = 0; i<255; i++) {
+        printf("\n");
+    }
+}
+
+void intro() {
+    printf("Time to wake up Neo . . .");
+    clear_screen();
+    printf("Nah, just messing with you.\n");
+}
+
 int main(int argc, char* argv[]) {
 		InputBuffer* input_buffer = new_input_buffer();
-		while (1) {
-				print_prompt();
+    intro();
+    while (1) {
+				printf("\7");
+        print_prompt();
 				read_input(input_buffer);
 
 				if (strcmp(input_buffer->buffer, ".exit") == 0) {
