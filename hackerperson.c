@@ -86,7 +86,7 @@ void intro() {
     printf("We have a bit of a situation:\n");
     timer(4200);
     clear_screen(10);
-    printf("Your...BLT drive just went AWOL...\n");
+    printf("Zero Cool says that your...BLT drive just went AWOL...\n");
     timer(4300);
     clear_screen(10);
     printf("and we can't seem to find it anywhere.\n");
@@ -107,6 +107,17 @@ void intro() {
     printf("Just type 'help()' into the prompt for a list of functions. Good Luck!\n");
 }
 
+void help_menu() {
+    clear_screen(100);
+    printf("inspect(obj): look and/or inspect and object (obj) with your eyes and/or ear balls.\n\n");
+    printf("poke(obj): poke an object (obj), make sure you have permission!\n\n");
+    printf("use(obj): use an object (obj), that can mean whatever.\n\n");
+    printf("sing(obj): sing at an object (obj), this is not recommended.\n\n");
+    printf("kick(obj): like Fonz-kicking-the-jukebox style not American-History-X style.\n\n");
+    printf("introspect(): sometimes one must look within. \n\n");
+    printf("compliment(obj): compliment an object (obj) if you wanna get things done.\n\n");
+}
+
 int main(int argc, char* argv[]) {
 		InputBuffer* input_buffer = new_input_buffer();
     intro();
@@ -119,7 +130,7 @@ int main(int argc, char* argv[]) {
             close_input_buffer(input_buffer);
 						exit(EXIT_SUCCESS);
 				} else if (strcmp(input_buffer->buffer, "help()") == 0) {
-            printf("Placeholder Menu\n");
+            help_menu();
         } else if (strcmp(input_buffer->buffer, "exit") == 0) {
             printf("If you want to leave, try the function exit()");
         } else {
