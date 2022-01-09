@@ -89,10 +89,10 @@ void intro() {
     printf("folding and re-folding on itself over and over again\n");
     timer(4000);
     clear_screen(10);
-    printf("until time rends even the atoms themselves apart.");
+    printf("until time rends even the atoms themselves apart.\n");
     timer(4000);
     clear_screen(128);
-    printf("But I digress...");
+    printf("But I digress...\n");
     timer(4000);
     clear_screen(10);
     printf("Your goal is to traverse the vast wild of this machine\n");
