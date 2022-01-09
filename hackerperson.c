@@ -107,7 +107,6 @@ int main(int argc, char* argv[]) {
 		InputBuffer* input_buffer = new_input_buffer();
     intro();
     while (1) {
-				printf("\7");
         print_prompt();
 				read_input(input_buffer);
 
