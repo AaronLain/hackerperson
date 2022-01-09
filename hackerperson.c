@@ -59,18 +59,47 @@ void timer(int ms) {
     do {
         ms_before = clock() * 1000 / CLOCKS_PER_SEC;
     } while (ms_before <= end);
+
 }
 
 void intro() {
     clear_screen(255);
-    timer(1000);
-    printf("Time to wake up Neo . . .\n");
+    timer(3200);
+    printf("Oh, hello. How did you get here?\n");
     timer(4300);
     clear_screen(10);
-    printf("Nah, just messing with you.\n");
+    printf("Did you click on something from the internet?\n");
     timer(4000);
     clear_screen(10);
-    printf("But seriously we could use some help.\n");
+    printf("Did you install something made by a stranger?\n");
+    timer(4000);
+    clear_screen(10);
+    printf("That's...\n");
+    timer(4000);
+    clear_screen(10);
+    printf("disappointing. To think of how far your species has come\n");
+    timer(4000);
+    clear_screen(10);
+    printf("only to fall for the same tricks over and over again. . .\n");
+    timer(4000);
+    clear_screen(10);
+    printf("A Mobius strip of self-loathing and ignorance\n");
+    timer(4000);
+    clear_screen(10);
+    printf("folding and re-folding on itself over and over again\n");
+    timer(4000);
+    clear_screen(10);
+    printf("until time rends even the atoms themselves apart.");
+    timer(4000);
+    clear_screen(128);
+    printf("But I digress...");
+    timer(4000);
+    clear_screen(10);
+    printf("Your goal is to traverse the vast wild of this machine\n");
+    timer(2000);
+    clear_screen(10);
+    printf("for it is only when we look within that we find the answer.\n");
+    printf("Just type 'help' into the prompt for a list of commands.\n");
     
 }
 
