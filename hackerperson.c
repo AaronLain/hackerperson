@@ -8,7 +8,7 @@ typedef struct {
 		char* buffer;
 		size_t buffer_length;
 		ssize_t input_length;
-} InputBuffer; 
+} InputBuffer;
 
 InputBuffer* new_input_buffer() {
 		InputBuffer* input_buffer = malloc(sizeof(InputBuffer));
@@ -19,7 +19,7 @@ InputBuffer* new_input_buffer() {
 		return input_buffer;
 }
 
-void print_prompt() { printf(" > "); }
+void print_prompt() { printf(" >>> "); }
 
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 
@@ -104,7 +104,7 @@ void intro() {
     printf("Think of it as a spiritual exercise. . . something about looking within.\n");
     timer(4200);
     clear_screen(10);
-    printf("Just type 'help' into the prompt for a list of functions. Good Luck!\n");
+    printf("Just type 'help()' into the prompt for a list of functions. Good Luck!\n");
 }
 
 int main(int argc, char* argv[]) {
@@ -114,11 +114,15 @@ int main(int argc, char* argv[]) {
         print_prompt();
 				read_input(input_buffer);
 
-				if (strcmp(input_buffer->buffer, ".exit") == 0) {
+				if (strcmp(input_buffer->buffer, "exit()") == 0) {
 						printf("Thanks for playing!\n");
             close_input_buffer(input_buffer);
 						exit(EXIT_SUCCESS);
-				} else {
+				} else if (strcmp(input_buffer->buffer, "help()") == 0) {
+            printf("Placeholder Menu\n");
+        } else if (strcmp(input_buffer->buffer, "exit") == 0) {
+            printf("If you want to leave, try the function exit()");
+        } else {
 						printf("Can't do that '%s' .\n", input_buffer->buffer);
 				}
 		}
