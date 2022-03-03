@@ -123,18 +123,18 @@ int main(int argc, char* argv[]) {
     intro();
     while (1) {
         print_prompt();
-				read_input(input_buffer);
-
-				if (strcmp(input_buffer->buffer, "exit()") == 0) {
-						printf("Thanks for playing!\n");
+        read_input(input_buffer);
+        
+        if (strcmp(input_buffer->buffer, "exit()") == 0) {
+            printf("Thanks for playing!\n");
             close_input_buffer(input_buffer);
-						exit(EXIT_SUCCESS);
-				} else if (strcmp(input_buffer->buffer, "help()") == 0) {
+            exit(EXIT_SUCCESS);
+        } else if (strcmp(input_buffer->buffer, "help()") == 0) {
             help_menu();
         } else if (strcmp(input_buffer->buffer, "exit") == 0) {
             printf("If you want to leave, try the function exit()");
         } else {
-						printf("Can't do that '%s' .\n", input_buffer->buffer);
-				}
-		}
+            printf("Can't do that '%s' .\n", input_buffer->buffer);
+        }
+    }
 }
